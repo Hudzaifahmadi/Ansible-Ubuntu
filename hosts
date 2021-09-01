@@ -1,11 +1,11 @@
 [all:vars]
 ansible_connection= "ssh"
 ansible_ssh_port="22"
-ansible_ssh_user= "root"
-ansible_ssh_pass= "nimda2020"
+ansible_ssh_user= "your_username"
+ansible_ssh_pass= "your_password"
 ansible_python_interpreter= "/usr/bin/python"
 
 [client]
-SERVER-101     ansible_host=172.20.20.101
-SERVER-111     ansible_host=172.20.20.111
-SERVER-151     ansible_host=172.20.20.151
+SERVER-101     ansible_host=192.168.1.101
+SERVER-102     ansible_host=192.168.1.102
+SERVER-103     ansible_host=192.168.1.103

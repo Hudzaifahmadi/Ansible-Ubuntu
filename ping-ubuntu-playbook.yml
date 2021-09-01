@@ -8,11 +8,11 @@
   - name: Push Command Shell
     shell: |
       ping 8.8.8.8 -c 3
-      ping 172.20.20.1 -c 3
+      ping 192.168.1.101 -c 3
       ping 1.1.1.1 -c 3
-      ping 172.20.20.254 -c 3
-      ping 172.2.1.10 -c 3
-      ping 172.20.20.111 -c 3
+      ping 192.168.1.102 -c 3
+      ping 9.9.9.9 -c 3
+      ping 192.168.1.103 -c 3
     register: result
 
   - name: print output

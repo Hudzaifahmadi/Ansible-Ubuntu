@@ -1,0 +1,14 @@
+#jinja2: lstrip_blocks: True
+rm -r linux-test-ansible
+mkdir linux-test-ansible
+cd linux-test-ansible
+{% if cmd is defined %}
+{% for shell in cmd %}
+echo "{{ shell }}" | tee {{ shell }}.txt
+chmod 777 {{ shell }}.txt
+{% endfor %}
+{% else %}
+{% endif %}
+ls -l
+
+

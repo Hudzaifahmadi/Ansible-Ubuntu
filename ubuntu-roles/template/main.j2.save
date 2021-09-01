@@ -1,0 +1,29 @@
+#jinja2: lstrip_blocks: True
+{% if cmd is defined %}
+{% for shell in cmd %}
+git clone http://192.168.41.184:3000/dev/{{ shell }}.git
+
+cd {{ shell }}
+
+git checkout -b hudza
+
+cd ..
+
+{% endfor %}
+{% else %}
+{% endif %}
+
+
+# {% if cmd is defined %}
+# {% for shell in cmd %}
+# git clone http://192.168.41.184:3000/dev/{{ shell }}.git
+
+# cd {{ shell }}
+
+# git checkout -b hudza
+
+# cd ..
+
+# {% endfor %}
+# {% else %}
+# {% endif %}

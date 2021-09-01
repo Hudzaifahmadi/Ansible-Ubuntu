@@ -1,0 +1,20 @@
+---
+- name: Running Ubuntu Automation with Ansible
+  gather_facts: no
+  connection: local
+  hosts: all
+
+  tasks:
+  - name: Push Command Shell
+    shell: |
+      ping 8.8.8.8 -c 3
+      ping 172.20.20.1 -c 3
+      ping 1.1.1.1 -c 3
+      ping 172.20.20.254 -c 3
+      ping 172.2.1.10 -c 3
+      ping 172.20.20.111 -c 3
+    register: result
+
+  - name: print output
+    debug:
+      var: result.stdout_lines

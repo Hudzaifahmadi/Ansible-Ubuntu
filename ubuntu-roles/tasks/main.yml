@@ -1,0 +1,16 @@
+---
+- name: confirm or create configs directory
+  file:
+    path: "{{ tmp_dir_ubuntu }}"
+    state: directory
+
+- name: save device information using template
+  template:
+    src: template/main.j2
+    dest: "{{ conf_file_ubuntu }}"
+
+- name: give folder permission
+  shell: |
+    chmod 776 /ansible/tmp/"{{ inventory_hostname }}"
+
+

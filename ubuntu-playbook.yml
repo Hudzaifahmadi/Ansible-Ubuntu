@@ -1,0 +1,32 @@
+---
+- name: Running Ubuntu Automation with Ansible
+  gather_facts: no
+  connection: local
+  hosts: all
+  roles:
+    - ubuntu-roles
+
+  vars:
+    tmp_dir_ubuntu: "/ansible/tmp/"
+    conf_file_ubuntu: "{{ tmp_dir_ubuntu}}/{{ inventory_hostname }}"
+
+  tasks:
+  - name: cmd push with template
+    shell: |
+      "{{ conf_file_ubuntu }}"
+    register: result  
+
+  - name: print output
+    debug:
+      var: result.stdout_lines
+
+
+  - name: cmd push
+    shell: |
+      apt update
+      apt install lnav -y
+    register: result
+
+  - name: print output
+    debug:
+      var: result.stdout_lines

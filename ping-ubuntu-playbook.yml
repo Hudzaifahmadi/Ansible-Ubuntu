@@ -3,6 +3,7 @@
   gather_facts: no
   connection: local
   hosts: all
+  become: yes
 
   tasks:
   - name: Push Command Shell

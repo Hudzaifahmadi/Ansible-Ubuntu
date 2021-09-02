@@ -3,6 +3,7 @@
   gather_facts: no
   connection: local
   hosts: all
+  become: yes
   roles:
     - ubuntu-roles
 
